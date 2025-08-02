@@ -3,6 +3,17 @@ import { useSessionFeedback, useCreateFeedback, useUpdateFeedback, useDeleteFeed
 import type { FC } from 'react';
 import type { SessionFeedback } from '../types/sessionFeedback';
 
+import React, { useState } from 'react';
+import { useSessionFeedback, useCreateFeedback, useUpdateFeedback, useDeleteFeedback } from '../hooks/useSessionFeedback';
+import type { SessionFeedback } from '../types/sessionFeedback';
+import PageLayout from '../components/PageLayout';
+import CardContainer from '../components/CardContainer';
+import ErrorMessage from '../components/ErrorMessage';
+import EmptyState from '../components/EmptyState';
+import TopNavBar from '../components/TopNavBar';
+import DrawerNav from '../components/DrawerNav';
+import { ErrorBoundary } from '../components/ErrorBoundary';
+
 const initialForm: Partial<SessionFeedback> = {
   userId: '',
   sessionDate: '',
@@ -28,6 +39,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import EmptyState from '../components/EmptyState';
 
 const SessionFeedback: FC = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const { data, isLoading, isError, error } = useSessionFeedback();
   const createMutation = useCreateFeedback();
   const updateMutation = useUpdateFeedback();
@@ -60,6 +72,9 @@ const SessionFeedback: FC = () => {
   };
 
   return (
+    <ErrorBoundary>
+      <TopNavBar onMenuClick={() => setDrawerOpen(true)} />
+      <DrawerNav open={drawerOpen} onClose={() => setDrawerOpen(false)} />
     <PageLayout title="Session Feedback">
       <CardContainer>
         {isLoading && <div>Loading...</div>}
@@ -117,6 +132,7 @@ const SessionFeedback: FC = () => {
         ) : null}
       </CardContainer>
     </PageLayout>
+    </ErrorBoundary>
   );
 };
 
