@@ -1,11 +1,18 @@
 
+
+
+
+
 import type { FC } from 'react';
+import PageLayout from '../components/PageLayout';
+import CardContainer from '../components/CardContainer';
 
 const MesocyclePlanner: FC = () => (
-  <div className="p-4">
-    <h1 className="text-2xl font-bold mb-4">Mesocycle Planner</h1>
-    <p>Plan your training blocks, deloads, and weekly splits here.</p>
-  </div>
+  <PageLayout title="Mesocycle Planner">
+    <CardContainer>
+      <p>Plan your training blocks, deloads, and weekly splits here.</p>
+    </CardContainer>
+  </PageLayout>
 );
 
 export default MesocyclePlanner;
