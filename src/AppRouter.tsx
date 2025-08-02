@@ -6,6 +6,7 @@ import { Loading } from './components/Loading';
 
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const MesocyclePlanner = lazy(() => import('./pages/MesocyclePlanner'));
+const CreateMesocycle = lazy(() => import('./pages/CreateMesocycle'));
 const ExerciseLibrary = lazy(() => import('./pages/ExerciseLibrary'));
 const SessionFeedback = lazy(() => import('./pages/SessionFeedback'));
 const Settings = lazy(() => import('./pages/Settings'));
@@ -24,6 +25,7 @@ const AppRouter: FC = () => (
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/mesocycle" element={<MesocyclePlanner />} />
+          <Route path="/mesocycle/create" element={<CreateMesocycle />} />
           <Route path="/exercises" element={<ExerciseLibrary />} />
           <Route path="/feedback" element={<SessionFeedback />} />
           <Route path="/settings" element={<Settings />} />
