@@ -69,10 +69,6 @@ const Settings: FC = () => {
       </CardContainer>
     </PageLayout>
   );
-}
-
-export default Settings;
-  );
 };
 
 export default Settings;
