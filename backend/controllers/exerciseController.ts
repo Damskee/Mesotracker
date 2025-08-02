@@ -12,11 +12,13 @@ export const getExerciseById = (req: Request, res: Response) => {
 };
 
 export const createExercise = (req: Request, res: Response) => {
+  // In future, set userId from auth: req.body.userId = req.user.id;
   const exercise = exerciseService.createExercise(req.body);
   res.status(201).json(exercise);
 };
 
 export const updateExercise = (req: Request, res: Response) => {
+  // In future, check userId matches req.user.id
   const exercise = exerciseService.updateExercise(req.params.id, req.body);
   if (exercise) res.json(exercise);
   else res.status(404).json({ error: 'Exercise not found' });

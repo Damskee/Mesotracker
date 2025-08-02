@@ -12,11 +12,13 @@ export const getMesocycleById = (req: Request, res: Response) => {
 };
 
 export const createMesocycle = (req: Request, res: Response) => {
+  // In future, set userId from auth: req.body.userId = req.user.id;
   const meso = mesocycleService.createMesocycle(req.body);
   res.status(201).json(meso);
 };
 
 export const updateMesocycle = (req: Request, res: Response) => {
+  // In future, check userId matches req.user.id
   const meso = mesocycleService.updateMesocycle(req.params.id, req.body);
   if (meso) res.json(meso);
   else res.status(404).json({ error: 'Mesocycle not found' });

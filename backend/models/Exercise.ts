@@ -1,5 +1,6 @@
 export interface Exercise {
   id: string;
+  userId: string; // For future multi-user support
   name: string;
   type:
     | 'barbell'

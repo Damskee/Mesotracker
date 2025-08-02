@@ -2,6 +2,8 @@ import { Exercise } from '../models/Exercise';
 
 let exercises: Exercise[] = [];
 
+// For future: filter by userId (uncomment to enable user scoping)
+// export const getAllExercises = (userId: string): Exercise[] => exercises.filter(e => e.userId === userId);
 export const getAllExercises = (): Exercise[] => exercises;
 
 export const getExerciseById = (id: string): Exercise | undefined => exercises.find(e => e.id === id);

@@ -2,6 +2,8 @@ import { Mesocycle } from '../models/Mesocycle';
 
 let mesocycles: Mesocycle[] = [];
 
+// For future: filter by userId (uncomment to enable user scoping)
+// export const getAllMesocycles = (userId: string): Mesocycle[] => mesocycles.filter(m => m.userId === userId);
 export const getAllMesocycles = (): Mesocycle[] => mesocycles;
 
 export const getMesocycleById = (id: string): Mesocycle | undefined => mesocycles.find(m => m.id === id);
