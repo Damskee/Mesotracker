@@ -1,0 +1,23 @@
+{
+  "name": "meso-builder-backend",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint . --ext .ts,.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.30",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.0",
+    "eslint": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0"
+  }
+}
